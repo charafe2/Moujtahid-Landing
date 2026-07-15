@@ -392,7 +392,6 @@
 .lp .risk-tech__pill {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -403,15 +402,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-.lp .risk-tech__pill::before {
-  content: '';
-  flex: 0 0 auto;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #4a74f4;
-  box-shadow: 0 0 0 0 rgba(74, 116, 244, 0.5);
 }
 .lp .risk-tech__title {
   max-width: 760px;
@@ -1911,15 +1901,6 @@
    GPU-composited properties only: transform and opacity.
    ===================================================================== */
 @media (prefers-reduced-motion: no-preference) {
-
-  /* ── Risk-tech eyebrow — pulsing "live signal" dot ── */
-  .lp .risk-tech__pill::before {
-    animation: riskPillPulse 2.1s ease-in-out infinite;
-  }
-  @keyframes riskPillPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 116, 244, 0.45); }
-    50%      { box-shadow: 0 0 0 7px rgba(74, 116, 244, 0); }
-  }
 
   /* ── 10. Ambient gradient breathe — hero background ── */
   .lp .hero::before {
