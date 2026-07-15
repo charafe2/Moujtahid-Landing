@@ -29,11 +29,9 @@ js/script.js        Interactions: typewriter intro, scroll reveals, nav,
                     parallax, counters, FAQ, custom selects, demo form
 assets/photos/      Images
 assets/videos/      Intro background video
-hero/               Original Angular component source (reference only)
 ```
 
 ## Notes
 
 - The demo request form simulates a successful submission on the client side; no backend is wired up yet.
 - Auth / login links point to `#` as placeholders.
-- `hero/` contains the original Angular standalone component this static page was ported from.

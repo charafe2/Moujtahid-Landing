@@ -2168,6 +2168,9 @@
   box-shadow: none;
 }
 
+/* The [hidden] attribute must win over the display rules below,
+   otherwise the success message and the form fields show at the same time. */
+.lp [hidden] { display: none !important; }
 .lp .demo-form__success {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: var(--space-3);
