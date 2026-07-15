@@ -1354,21 +1354,25 @@
   min-height: 560px;
   opacity: 0;
 }
-.lp .demo-request__pill {
+.lp .demo-request__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   align-self: flex-start;
   margin-bottom: var(--space-5);
-  padding: 7px 14px;
-  border: 1px solid rgba(5, 150, 132, 0.18);
-  border-radius: var(--radius-full);
-  background: rgba(5, 150, 132, 0.08);
   color: #078c78;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-.lp .demo-request__pill svg,
+.lp .demo-request__eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
 .lp .demo-form svg {
   width: 20px;
   height: 20px;
