@@ -392,19 +392,26 @@
 .lp .risk-tech__pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 7px 22px;
-  border: 1px solid rgba(69, 104, 255, 0.42);
-  border-radius: var(--radius-full);
-  color: #4267ef;
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: 0 8px 28px rgba(69, 104, 255, 0.08);
+  gap: 11px;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.22em;
   line-height: 1;
   text-transform: uppercase;
+  /* gradient "signal" text — no border, no background chip */
+  background: linear-gradient(90deg, #3a5cf0 0%, #6d8fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lp .risk-tech__pill::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4a74f4;
+  box-shadow: 0 0 0 0 rgba(74, 116, 244, 0.5);
 }
 .lp .risk-tech__title {
   max-width: 760px;
@@ -1904,6 +1911,15 @@
    GPU-composited properties only: transform and opacity.
    ===================================================================== */
 @media (prefers-reduced-motion: no-preference) {
+
+  /* ── Risk-tech eyebrow — pulsing "live signal" dot ── */
+  .lp .risk-tech__pill::before {
+    animation: riskPillPulse 2.1s ease-in-out infinite;
+  }
+  @keyframes riskPillPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 116, 244, 0.45); }
+    50%      { box-shadow: 0 0 0 7px rgba(74, 116, 244, 0); }
+  }
 
   /* ── 10. Ambient gradient breathe — hero background ── */
   .lp .hero::before {
